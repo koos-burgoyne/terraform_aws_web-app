@@ -2,9 +2,9 @@
 
 The purpose of this repository is to demonstrate how to create a web app that does not store data on its local server instance but rather in a separate database. This is the typical format for cloud operation: computing is separate to storage so that it can be scaled automatically; storage is separate so that scaling does not impact the persistance of data. 
 
-In this case, the computing part is performed with AWS Elastic Compute Cloud EC2 instances. An instance is created and a user script run to install docker, pull a docker image from an S3 bucket, and start a container from that image. The persistence of these instances is controlled by an autoscaler, and access to them is controlled by a load balancer. All of this is provisioned by Terraform, an Infrastructure as Code (IaC) tool that 
+In this case, the computing part is performed with AWS Elastic Compute Cloud EC2 instances. An instance is created and a user script run to install docker, pull a docker image from an S3 bucket, and start a container from that image. The persistence of these instances is controlled by an autoscaler, and access to them is controlled by a load balancer. All of this is provisioned by Terraform, an Infrastructure as Code (IaC) tool that allows you to control cloud infrastructure using code ([Terraform](https://terraform.io)).
 
-This repo contains the basic scripts to use Terraform to deploy a Django web app that uses AWS RDS for its remote data store. You will first need to package the app as a Docker image From there it can be deployed to an EC2 instance where it will be connected to an RDS server.
+This repo contains the basic scripts to use Terraform to deploy a Django web app that uses AWS RDS for its remote data store. You will first need to package the app as a Docker image. From there it can be deployed to an EC2 instance where it will be connected to an RDS server.
 
 The repo has the following structure:
 
